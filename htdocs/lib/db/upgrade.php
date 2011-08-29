@@ -1705,7 +1705,7 @@ function xmldb_core_upgrade($oldversion=0) {
         $usermessages = get_records_array(
             'notification_internal_activity',
             'type',
-            get_field('activity_type', 'id', 'name', 'usermessage')
+            get_field('activity_type', 'id', 'name', 'usermessage'),'','id,url');
         );
         if ($usermessages) {
             foreach ($usermessages as &$m) {
